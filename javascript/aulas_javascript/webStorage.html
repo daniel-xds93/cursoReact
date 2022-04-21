@@ -1,0 +1,23 @@
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Web Storage</title>
+        
+    </head>
+    <body>
+
+        <form>
+            <label for="txtNome">Nome:</label>
+            <input type="text" name="txtNome" id="txtNome">
+
+            <input type="button" onclick="iniciarSessao()" value="Iniciar Sessão">
+            <input type="button" onclick="finalizarSessao()" value="Finalizar Sessão">
+        </form>
+
+        <div>
+            Usuário logado: <span id="logUsuario"></span>
+        </div>
+
+        <script type="text/javascript" src="../scripts/webStorage.js"></script>
+    </body>
+</html>
