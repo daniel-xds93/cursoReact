@@ -12,6 +12,9 @@ class App extends Component{
 
     // a linha abaixo permite a função add fazer enxergar apropriedade
     this.add = this.add.bind(this);
+
+    // a linha abaixo permite a função subtrair enxergar a propriedade
+    this.subtrair = this.subtrair.bind(this);
   }
 
   add(){
@@ -23,7 +26,9 @@ class App extends Component{
   }
 
   subtrair(){
-    console.log("subitraiu...");
+    let state = this.state;
+    state.contador -= 1;
+    this.setState(state);
   }
   
   render(){
