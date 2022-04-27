@@ -17,6 +17,16 @@ class App extends Component{
     }, 1000);
   }
 
+  // a função abaixo realiza uma ação a cada atualização
+  componentDidUpdate(){
+    console.log("Atualizou...");
+  }
+
+  // a função abaixo retorna true ou false -> caso queira ou nao atualizar
+  /*shouldComponentUpdate(){
+    console.log("atualizado...");
+  }*/
+
   render(){
     return(
       <div>
