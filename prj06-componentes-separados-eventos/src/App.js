@@ -1,9 +1,11 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 
 function App() {
   return (
     <div>
-    
+      
+      <h1>Teste</h1>
+
     </div>
   );
 }
