@@ -7,3 +7,6 @@ class Membro extends Component{
         );
     }
 }
+
+// a linha abaixo exporta o membro
+export default Membro;
