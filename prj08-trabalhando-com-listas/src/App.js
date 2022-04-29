@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+//importando o meu component Feed
+import Feed from './component/feed';
+
 class App extends Component {
   
   constructor(props){
@@ -10,6 +13,7 @@ class App extends Component {
         { id: 1, username: "daniel.xds93", curtidas: 80, comentarios: 14 },
         { id: 2, username: "aprendendo.doinicio", curtidas: 210, comentarios: 143 },
         { id: 3, username: "vilma.nunes104", curtidas: 8, comentarios: 6 },
+        { id: 4, username: "renanluis31", curtidas: 1, comentarios: 0 },
       ]
     };
   }
@@ -19,17 +23,12 @@ class App extends Component {
   render(){
     return (
       <div>
-        {this.state.feed.map((item)=>{
-            return(
-              // adicionei o key={item.id} -> pois é necessario uma chave unica de identificação para o item
-              <div key={item.id}>
-                <h3>{ item.username }</h3>
-                <a>
-                  {item.curtidas} curtidas / 
-                  {item.comentarios} comentarios
-                </a>
-              </div>
-            );
+        {
+          this.state.feed.map((item)=>{
+              return(
+                  // adicionei o key={item.id} -> pois é necessario uma chave unica de identificação para o item
+                <Feed id={item.id} username={item.username} curtidas={item.curtidas} comentarios={item.comentarios} />
+              );
           })
         }
       </div>
