@@ -8,7 +8,8 @@ class App extends Component {
     this.state = {
       nome: '',
       email: '',
-      senha: ''
+      senha: '',
+      errou: ''
     }
 
     this.cadastrar = this.cadastrar.bind(this);
@@ -17,7 +18,12 @@ class App extends Component {
   cadastrar(event){
     const {nome, email, senha} = this.state;
 
-    alert(nome)
+    if(nome !== '' && email !== '' && senha !== ''){
+      alert(`Nome: ${nome}\nE-mail: ${email}\nSenha: ${senha}`);
+    }else{
+      this.setState({errou: 'Ops! Tem algum campo que não foi preenchido. :('})
+    }
+
 
     // a linha abaixo não deixa atualizar a pagina apos dar ok
     event.preventDefault();
@@ -27,6 +33,12 @@ class App extends Component {
   render(){
     return (
       <div>
+        <h2>Faça seu cadastro</h2>
+        
+        {
+          this.state.errou && <p>{this.state.errou}</p>
+        }
+
         <form onSubmit={this.cadastrar}>
           <div>
             <label>Nome</label>
