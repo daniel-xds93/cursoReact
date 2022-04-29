@@ -14,13 +14,20 @@ class App extends Component {
     };
   }
 
+// map() -> faz a verredura no elemento.
+
   render(){
     return (
       <div>
         {this.state.feed.map((item)=>{
             return(
-              <div>
+              // adicionei o key={item.id} -> pois é necessario uma chave unica de identificação para o item
+              <div key={item.id}>
                 <h3>{ item.username }</h3>
+                <a>
+                  {item.curtidas} curtidas / 
+                  {item.comentarios} comentarios
+                </a>
               </div>
             );
           })
