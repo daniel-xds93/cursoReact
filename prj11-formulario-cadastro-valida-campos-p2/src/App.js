@@ -36,7 +36,7 @@ class App extends Component {
         <form>
           <div>
             <label>Nome</label>
-            <input type="text" name="txtNome" value={this.state.form.nome} 
+            <input type="text" name="nome" value={this.state.form.nome} 
               onChange={this.validaForms} />
           </div>
 
@@ -51,13 +51,13 @@ class App extends Component {
 
           <div>
             <label>E-mail</label>
-            <input type="email" name="txtEmail" placeholder="username@provedor.com" 
+            <input type="email" name="email" placeholder="username@provedor.com" 
             value={this.state.form.email} onChange={this.validaForms}/>
           </div>
           
           <div>
             <label>Senha</label>
-            <input type="password" name="txtSenha" value={this.state.form.senha}
+            <input type="password" name="senha" value={this.state.form.senha}
               onChange={this.validaForms} />
           </div>
 
