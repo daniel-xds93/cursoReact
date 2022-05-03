@@ -7,25 +7,33 @@ class App extends Component{
     super(props);
 
     this.state = {
-      numero: 0
+      numero: 0,
+      comeca: 'Iniciar'
     }
 
     this.timer = null;
 
     this.iniciar = this.iniciar.bind(this);
-    this.parar = this.parar.bind(this);
+    this.limpar = this.limpar.bind(this);
 
   }
 
   iniciar(){
-    this.timer = setInterval(()=>{
-      let state = this.state;
-      state.numero += 0.1;
-      this.setState(state); 
-    },100);
+    if(this.timer !== null){
+      clearInterval(this.timer);
+      this.timer = null;
+      this.setState({comeca: 'Iniciar'})
+    }else{
+      this.timer = setInterval(()=>{
+        let state = this.state;
+        state.numero += 0.1;
+        this.setState(state); 
+      },100);
+      this.setState({comeca: 'Pausar' })
+    }
   }
 
-  parar(){
+  limpar(){
 
   }
 
@@ -36,8 +44,8 @@ class App extends Component{
 
         <a className="timer">{this.state.numero.toFixed(1)}</a>
         <div className="areaBtn">
-          <a className="botao" onClick={this.iniciar}>Iniciar</a>
-          <a className="botao" onClick={this.parar}>Parar</a>
+          <a className="botao" onClick={this.iniciar}>{this.state.comeca}</a>
+          <a className="botao" onClick={this.limpar}>Limpar</a>
         </div>
       </div>
     );
